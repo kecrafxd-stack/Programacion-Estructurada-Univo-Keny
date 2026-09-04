@@ -9,4 +9,4 @@ const minute = date.getMinutes();
 const seconds = date.getSeconds();
 
 //Consologear
-console.log(`Hoy es ${fecha}/${mes}/${year} y son las ${hora}:${minute}:${seconds}`);
+console.log(`Hoy es ${date.toLocaleDateString()} y son las ${hora}:${minute}:${seconds}`);
