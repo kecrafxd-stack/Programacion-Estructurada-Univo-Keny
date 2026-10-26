@@ -1,80 +1,66 @@
-function potencial(numero){
-    if(numero === 0){
-        return 1;
+import readline from "node:readline";
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+function sumaPares(n){
+    let pollo = 0
+    if(n <= 0){
+        return 0;
     }
 
-    //Lo resolvi de pedo y no se como
-    function redux(numero2){
-        if(numero2 === 0){
-        return 1;
+    if(n % 2 == 0){
+        return n + sumaPares(n-1)
+    } else {
+        return sumaPares(n-1)
     }
-
-    return numero * redux(numero2-1)
-    }
-
-    return redux(numero)
 }
-const num = 3
-console.log("La potencia de " + num + " a la " + num + " es: " + potencial(num))
+function sumaImpares(n){
+    if(n <= 0){
+        return 0;
+    }
 
-// Amor, amor, amor
-// Amor, amor, amor
-// Quiero que me vuelvan a mirar tus ojos
+    if(n % 2 != 0){
+        return n + sumaImpares(n-1)
+    } else {
+        return sumaImpares(n-1)
+    }
+}
 
-// Amor, amor, amor
-// Amor, amor, amor
-// Quiero volver a besar tus labios rojos
+function fibonacci(n) {
 
-// ¿Cómo no acordarme de ti?
-// ¿De qué manera olvidarte
-// Si todo me recuerda a ti?
-// En todas partes, estás tú
+    if (n === 0) return 0;
 
-// Si en una rosa, estás tú
-// Si en cada respirar, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
+    if (n === 1) return 1;
 
-// Si besando la cruz, estás tú
-// Rezando una oración, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+console.log(`===Menu Pitero===\n1. Sumar los primeros numeros pares hasta n\n2. Sumar los primeros numeros impares hasta n\n3. Imprimir el n-simo numero de la serie fibonacci\nCualquier Otro numero. Cerrar`)
+rl.question("Que desea hacer?: #", (opt)=>{
+    
+    rl.question(`Ingrese un numero n: `, (n)=>{
+    n = parseInt(n)
+    opt = parseInt(opt)
 
-// Si te clavaste aquí en mi corazón
-// Y, de amor, has llenado mi alma
-// Y tu sangre corre por mis venas
-// Y mi sangre me hace estremecer
-// Iré contigo
+        switch(opt){
+            case 1:
+            console.log(`La suma de los primeros valores pares es: ${sumaPares(n)}`)
+            break;
 
-// Amor, amor, amor
-// Amor, amor, amor
-// Quiero que me vuelvan a mirar tus ojos
+            case 2:
+            console.log(`La suma de los primeros valores impares es: ${sumaImpares(n)}`)
+            break;
 
-// Amor, amor, amor
-// Amor, amor, amor
-// Quiero volver a besar tus labios rojos
+            case 3:
+            console.log(`El valor numero ${n} de la serie Fibonacci es: ${fibonacci(n)}`)
+            break;
 
-// ¿Cómo no acordarme de ti?
-// ¿De qué manera olvidarte
-// Si todo me recuerda a ti?
-// En todas partes, estás tú
-
-// Si en una rosa, estás tú
-// Si en cada respirar, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
-
-// Si besando la cruz, estás tú
-// Rezando una oración, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
-
-// Si en una rosa, estás tú
-// Si en cada respirar, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
-
-// Si besando la cruz, estás tú
-// Rezando una oración, estás tú
-// ¿Cómo te voy a olvidar?
-// ¿Cómo te voy a olvidar?
+            default:
+                console.log("Bye Bye");
+                break;
+        }
+    rl.close()
+})
+})
