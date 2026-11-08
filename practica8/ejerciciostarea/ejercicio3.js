@@ -12,7 +12,7 @@ const invertirCadena = (cadena) => {
 const esPalindromo = (cadena) => {
     const textoLimpio = cadena.toLowerCase().replace(/[^a-z0-9áéíóúü]/g, "");
     const textoInvertido = textoLimpio.split("").reverse().join("");
-    return textoLimpio === textoInvertido;
+    return textoLimpio r=== textoInvertido;
 };
 
 console.log("=== TAREA 3: MANEJO DE CADENAS ===\n");
