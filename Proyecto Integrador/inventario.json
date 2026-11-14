@@ -1,0 +1,16 @@
+[
+  {
+    "nombre": "ZTOTK",
+    "ID": "zel123",
+    "release": "2023",
+    "publisher": "Nintendo",
+    "disponibles": 5
+  },
+  {
+    "ID": "smo",
+    "nombre": "Super Mario Odyssey",
+    "release": 2019,
+    "publisher": "nintendo",
+    "disponibles": 100
+  }
+]
