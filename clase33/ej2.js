@@ -45,7 +45,7 @@ function Agregarventas(dias, i, ventas, mayor, diaMayor){
 rl.question(`Cuántos estudiantes desea registrar? `, (dias)=>{
     dias = parseInt(dias);
 
-    if(Number.isFinite(dias) && dias > 0){
+    if(Number.isInteger(dias) && dias > 0){
         Agregarventas(dias, 1, allVentas, 0, 1)
     } else {
         console.log("Cantidad INVALIDA")
